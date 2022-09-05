@@ -23,8 +23,9 @@ let deleteUser = async (req, res) => {
 }
 let getUser = async (req, res) => {
     let id = req.params.id
+    const [row] = await connection.query('SELECT * FROM `user`');
     let [user] = await connection.query('SELECT * FROM user WHERE id=?', [id]);
-    return res.render('update.ejs', { dataUser: user[0] });
+    return res.render('index.ejs', { updateUser: user[0], dataUser: row });
 }
 let updateUser = async (req, res) => {
     let { id, firstName, lastName, email, address } = req.body;
