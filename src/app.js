@@ -7,9 +7,13 @@ require('dotenv').config()
 const app = express()
 const port = process.env.PORT || 3000;
 
-configViewEngine(app);
+/* cấu hình gửi data lên server */
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+configViewEngine(app);
 initWebRoute(app)
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
