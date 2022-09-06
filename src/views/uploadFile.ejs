@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a class="active" href="/upload">Upload</a>
+    </div>
+    <div class="container">
+        <form method="POST" action="/upload-pic" class="form_upload form" enctype="multipart/form-data">
+            <label>Upload 1 file</label>
+            <input type="file" name="upload-input">
+            <button type="submit" class="btn_upload">Save</button>
+        </form>
+        <form method="POST" action="/upload-multi-pic" class="form_upload form" enctype="multipart/form-data">
+            <label>Upload multi file</label>
+            <input type="file" name="upload-multi-input" multiple>
+            <button type="submit" class="btn_upload">Save</button>
+        </form>
+    </div>
+</body>
+</html>

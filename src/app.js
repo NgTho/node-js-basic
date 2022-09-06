@@ -1,6 +1,7 @@
 import express from "express"
 import configViewEngine from "./configs/viewEngine"
 import initWebRoute from "./route/web"
+import initApiRoute from "./route/api"
 
 require('dotenv').config()
 
@@ -11,8 +12,12 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+/* cấu hình ViewEngine */
 configViewEngine(app);
-initWebRoute(app)
+
+/* cấu hình router */
+initWebRoute(app);
+initApiRoute(app);
 
 
 app.listen(port, () => {

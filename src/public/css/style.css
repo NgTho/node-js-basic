@@ -66,6 +66,11 @@ body {
 .form {
     margin: 50px auto;
     width: fit-content;
+    width: fit-content;
+        margin: 30px auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 15px;
 }
 
 label {
@@ -73,6 +78,20 @@ label {
 }
 
 .form button {
-    text-align: center;
-    margin: 20px auto;
+    margin: 20px 0px;
+    }
+    
+    td:nth-of-type(5) {
+        display: flex;
+        gap: 5px;
+    }
+    
+    .form_upload label {
+        margin: 20px 0px;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    
+    .btn_upload {
+        display: block;
 }
