@@ -11,30 +11,14 @@ import about from "../controller/about"
 
 
 /* config upload file */
-import multer from "multer";
-import path from "path";
-var appRoot = require("app-root-path");
+
 import {
     getUpload,
+    varUpload,
     uploadFile,
     uploadMultiFile
 } from "../controller/uploadController"
-const imageFilter = function (req, file, cb) {
-    if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
-        req.fileValidationError = 'Only image files are allowed!';
-        return cb(new Error('Only image files are allowed!'), false);
-    }
-    cb(null, true);
-};
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, appRoot + "/src/public/image/");
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
-});
-let upload = multer({ storage: storage, fileFilter: imageFilter });
+let upload = varUpload();
 /* end config upload file */
 
 
