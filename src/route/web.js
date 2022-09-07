@@ -11,7 +11,6 @@ import about from "../controller/about"
 
 
 /* config upload file */
-
 import {
     getUpload,
     varUpload,
